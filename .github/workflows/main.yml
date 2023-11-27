@@ -14,7 +14,7 @@ jobs:
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 7.0.*
+        dotnet-version: 3.1.301
     
     - name: Install dependencies
       run: dotnet restore
@@ -38,8 +38,9 @@ jobs:
       with:
         aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        application_name: DesenvolvimentoWebUNIFOR
-        environment_name: DesenvolvimentoWebUNIFOR-env
-        region: sa-east-1
+        application_name: DesenvolvimentoWebUNIFOR-env
+        environment_name: DesenvolvimentoWebUNIFOR-env-dev
+        region: us-east-2
         version_label: ${{ github.run_id }}
         version_description: ${{ github.sha }}
+        deployment_package: ${{ github.workspace }}/out.zip
