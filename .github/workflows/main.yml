@@ -40,7 +40,7 @@ jobs:
         aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         application_name: DesenvolvimentoWebUNIFOR-env
         environment_name: DesenvolvimentoWebUNIFOR-env
-        region: us-east-2
+        region: sa-east-1
         version_label: ${{ github.run_id }}
         version_description: ${{ github.sha }}
         deployment_package: ${{ github.workspace }}/out.zip
